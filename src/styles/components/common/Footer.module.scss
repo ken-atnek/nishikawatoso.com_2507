@@ -1,0 +1,78 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    article {
+        display: flex;
+        justify-content: space-between;
+        padding: 2em;
+
+        .boxContents {
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            nav {
+                position: relative;
+                font-size: inherit;
+                color: $base-blue;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em 0;
+                .itemLink {
+                    font-size: FZ(14);
+                    letter-spacing: 0.08em;
+                }
+            }
+            .shopInfo {
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em 0;
+                color: $dark-gray;
+                address {
+                    font-size: FZ(14);
+                    gap: 0.5em 0;
+                    display: flex;
+                    flex-direction: column;
+                    letter-spacing: 0.08em;
+                }
+                .itemTel {
+                    position: relative;
+                    font-size: FZ(14);
+                    letter-spacing: 0.08em;
+                    padding-left: 1em;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        translate: 0 -50%;
+                        left: 0;
+                        width: 0.8em;
+                        @include svg-icon-phone("555555");
+                    }
+                }
+            }
+        }
+        .boxMap {
+            position: relative;
+            width: 50%;
+            max-width: 40rem;
+            iframe {
+                aspect-ratio: 40/25;
+            }
+        }
+    }
+    .copyright {
+        width: 100%;
+        padding: 0.5em 0 0.5em;
+        display: flex;
+        justify-content: center;
+        background-color: $base-blue;
+        font-size: FZ(14);
+        letter-spacing: 0.04em;
+        color: $base-white;
+    }
+}

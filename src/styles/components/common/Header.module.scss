@@ -1,0 +1,153 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerHeader {
+    position: relative;
+    display: flex;
+    padding-inline: 2em;
+    justify-content: center;
+    z-index: 5;
+    transition: 0.5s ease-out;
+    background-color: #fff;
+    article {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        @include sp {
+            padding: 4vw 0;
+            justify-content: flex-start;
+        }
+        .titleEn {
+            @include dancing-script;
+            color: $base-blue;
+            font-size: FZ(25);
+        }
+        nav {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            @include sp {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+            }
+            .linkContainer {
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                padding-bottom: 4px;
+                font-size: inherit;
+                @include sp {
+                    width: max-content;
+                    justify-content: flex-start;
+                    padding-bottom: unset;
+                }
+                .itemLink {
+                    position: relative;
+                    font-size: FZ(16);
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    letter-spacing: 0.07em;
+                    text-decoration: none;
+                    color: #000;
+                    padding-inline: 1em;
+                    cursor: pointer;
+                }
+                .hoverBar {
+                    position: absolute;
+                    bottom: -2px;
+                    height: 2px;
+                    background-color: $base-blue;
+                    transition:
+                        left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+                    pointer-events: none;
+                    z-index: 10;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    &.isActive {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgb(0 0 0 / 10%); // Optional effect
+        z-index: 100;
+        align-items: center;
+        opacity: 1;
+        pointer-events: auto;
+        article {
+            padding-top: 1.5em;
+            padding-bottom: 1.5em;
+            nav {
+                .linkContainer {
+                    .itemLink {
+                        color: $base-black;
+                    }
+                    .hoverBar {
+                        background-color: $base-black;
+                    }
+                }
+            }
+        }
+    }
+}
+.hamburgerButton {
+    position: fixed;
+    top: 4vw;
+    left: 0;
+    width: 11vw;
+    aspect-ratio: 1;
+
+    // border: solid 2px #fff;
+    z-index: 100;
+    display: none;
+    background-color: $base-white;
+    border-top-right-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    @include sp {
+        display: block;
+    }
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        height: 2px;
+        background-color: $base-black;
+        transition: 0.3s ease-out;
+        &:nth-of-type(1) {
+            translate: -50% calc(-50% - 7px);
+        }
+        &:nth-of-type(2) {
+            translate: -50% -50%;
+        }
+        &:nth-of-type(3) {
+            translate: -50% calc(-50% + 7px);
+        }
+    }
+    &.is-open {
+        span {
+            transition: 0.3s ease-out;
+            &:nth-of-type(1) {
+                translate: -50% -50%;
+                rotate: 45deg;
+            }
+            &:nth-of-type(2) {
+                translate: 150% -50%;
+                opacity: 0;
+            }
+            &:nth-of-type(3) {
+                translate: -50% -50%;
+                rotate: -45deg;
+            }
+        }
+    }
+}

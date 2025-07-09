@@ -1,0 +1,78 @@
+/* =================================
+ * 	PageHead
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+.containerPageHead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 2em 12em;
+    gap: 3em 0;
+    background-color: $base-black;
+    color: $base-white;
+    @include sp {
+        padding: 20vw 4vw 8vw;
+    }
+    h1 {
+        width: 100%;
+        font-size: FZ(35);
+        max-width: $articleMaxWidth;
+        border-bottom: 2px solid;
+        padding-bottom: 0.2em;
+        @include sp {
+            font-size: FZ(30);
+        }
+    }
+    article {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto 1fr;
+        max-width: $articleMaxWidth;
+        gap: 2em;
+        @include sp {
+            grid-template-columns: unset;
+            grid-template-rows: unset;
+            grid-auto-flow: row;
+            gap: 4vw 0;
+        }
+        .itemImage {
+            position: relative;
+            grid-row: span 2;
+            width: 100%;
+            aspect-ratio: 1.78;
+            overflow: hidden;
+            max-width: 56rem;
+            @include sp {
+                grid-row: unset;
+            }
+            img {
+                object-fit: cover;
+            }
+        }
+        .subTitle {
+            font-size: FZ(38);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            line-height: 1.2em;
+            @include sp {
+                font-size: FZ(30);
+            }
+        }
+        p {
+            font-size: FZ(17);
+            letter-spacing: 0.04em;
+            max-width: 33em;
+            line-height: 1.8em;
+            @include sp {
+                max-width: unset;
+                text-align: justify;
+                margin-top: 1em;
+            }
+        }
+    }
+}
