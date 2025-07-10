@@ -40,3 +40,24 @@ footer {
     font-size: inherit;
     z-index: 1;
 }
+.wrap-link-contact {
+    display: flex;
+    align-items: center;
+    font-size: inherit;
+    width: 100%;
+    padding-inline: 1em;
+    a {
+        background-color: $base-blue;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        padding-block: 1.2em;
+        font-size: FZ(26);
+        font-weight: 500;
+        border-radius: 4px;
+        transition: 0.3s ease-out;
+        @include hover {
+            background-color: rgba($base-blue, 0.8);
+        }
+    }
+}

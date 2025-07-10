@@ -1,0 +1,25 @@
+/* =================================
+ * 	西川塗装 レフトバナー
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+
+.leftList {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: inherit;
+    width: 26rem;
+    gap: 1em 0;
+    div {
+        position: relative;
+        font-size: inherit;
+        img {
+            width: 100%;
+        }
+    }
+}

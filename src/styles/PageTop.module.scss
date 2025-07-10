@@ -1,5 +1,5 @@
 /* =================================
- * 	徳永琴教室 TOPページ
+ * 	西川塗装 TOPページ
  * ------------------------------ */
 @use "variable" as *;
 @use "svg" as *;
@@ -11,340 +11,49 @@
 /* =================================
  * HERO
  * ------------------------------ */
-.containerHero {
+.containerSlide {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 10vw;
-    font-size: inherit;
-    background-color: $base-black;
-    @include sp {
-        padding: 0 4vw;
-        padding-top: 18vw;
-    }
-    article {
+    height: 100vh;
+    height: 100dvh;
+    .slideImage {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        img {
-            width: 100%;
-            object-fit: cover;
-            @include sp {
-                padding-left: 10vw;
-            }
-        }
-        p {
-            position: absolute;
-            top: 0.5em;
-            left: 1em;
-            font-size: 5vw;
-            font-weight: 500;
-            letter-spacing: 0.04em;
-            line-height: 1.4em;
-            color: $base-white;
-        }
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1.4s ease-in-out;
+        object-fit: cover;
+    }
+
+    .active {
+        opacity: 1;
     }
 }
-
 /* =================================
- * HERO TEXT
+ * コンテンツ
  * ------------------------------ */
-.containerHeroText {
-    position: relative;
+.containerTop {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5em 2em 0;
-    font-size: inherit;
-    @include sp {
-        padding: 6vw 4vw;
-    }
+    padding-inline: 2em;
     article {
         display: grid;
-        width: fit-content;
-        grid-template-columns: repeat(2, auto);
-        @include sp {
-            width: 100%;
-            grid-template-columns: unset;
-            grid-auto-flow: row;
-            gap: 8vw 0;
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                background-color: #909090;
-                left: 0;
-            }
-            &::before {
-                bottom: 0;
-                width: 1px;
-                height: 100%;
-            }
-            &::after {
-                top: 0;
-                width: 9px;
-                aspect-ratio: 1;
-                border-radius: 50%;
-                translate: -4px;
-            }
-        }
-        .box01,
-        .box02 {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            font-size: inherit;
-            padding: 5em;
-            @include sp {
-                padding: 0 0 0 6vw;
-            }
-        }
-        .box01 {
-            padding-right: 3em;
-            @include sp {
-                padding-right: unset;
-            }
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                background-color: #909090;
-                right: 0;
-                @include sp {
-                    display: none;
-                }
-            }
-            &::before {
-                bottom: 0;
-                width: 1px;
-                height: 100%;
-            }
-            &::after {
-                top: 0;
-                width: 9px;
-                aspect-ratio: 1;
-                border-radius: 50%;
-                translate: 4px;
-            }
-            h3 {
-                font-size: FZ(35);
-                max-width: 12em;
-                text-align: center;
-                line-height: 1.6em;
-                @include sp {
-                    font-size: FZ(28);
-                    text-align: left;
-                }
-            }
-        }
-        .box02 {
-            padding-left: 3em;
-            gap: 1em 0;
-            @include sp {
-                padding: 0 0 0 6vw;
-            }
-            h3 {
-                font-size: FZ(35);
-                max-width: 12em;
-                @include sp {
-                    font-size: FZ(28);
-                    text-align: left;
-                }
-            }
-            p {
-                font-size: FZ(17);
-                max-width: 27em;
-                letter-spacing: 0.01em;
-                line-height: 1.8em;
-            }
-        }
-    }
-}
-
-/* =================================
- * ペットの同伴について
- * ------------------------------ */
-.containerPet {
-    background-color: $base-white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5em 0;
-    padding: 5em 2em;
-    color: $base-black;
-    @include sp {
-        padding: 10vw 4vw 6vw;
-        gap: 6vw 0;
-    }
-    .blockImage {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: auto 1fr;
+        max-width: $articleMaxWidth;
+        padding: 3em 0 8em;
         gap: 0 2em;
-        max-width: $articleMaxWidth;
-        @include sp {
-            max-width: unset;
-            grid-template-columns: unset;
-            grid-auto-flow: row;
-            padding-inline: 8vw;
-            gap: 4vw 0;
-        }
-        figure {
+        .blockContents {
             position: relative;
             font-size: inherit;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            img {
-                aspect-ratio: 1.33;
-                object-fit: cover;
-            }
-            figcaption {
-                font-size: FZ(16);
-                font-weight: 500;
-                margin-top: 0.2em;
-            }
-        }
-    }
-    .blockText {
-        display: flex;
-        flex-direction: column;
-        max-width: $articleMaxWidth;
-        margin-top: 3em;
-        h3 {
-            font-size: FZ(17);
-            letter-spacing: 0.04em;
-            margin-bottom: 1.6em;
-            @include sp {
-                font-size: FZ(20);
-            }
-        }
-        p {
-            font-size: FZ(17);
-            display: flex;
-            flex-direction: column;
-            letter-spacing: 0.04em;
-            line-height: 1.6em;
-            span {
-                text-decoration: underline 1px solid;
-                line-height: 1.8em;
-            }
-        }
-    }
-}
-
-/* =================================
- * 徳永恵津子について
- * ------------------------------ */
-.containerProfile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5em 0;
-    padding: 5em 2em;
-    @include sp {
-        padding: 10vw 4vw 6vw;
-        gap: 6vw 0;
-    }
-    article {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto 1fr;
-        width: fit-content;
-        gap: 3em 5em;
-        max-width: $articleMaxWidth;
-        @include sp {
-            grid-template-columns: unset;
-            grid-template-rows: unset;
-            grid-auto-flow: row;
-            gap: 4vw 0;
             width: 100%;
-        }
-        .itemImage {
-            grid-row: span 2;
-            max-width: 38rem;
-            @include sp {
-                grid-row: unset;
-                max-width: unset;
-                width: 60vw;
-                margin-inline: auto;
-            }
-            img {
-                width: 100%;
-            }
-        }
-        h3 {
-            font-size: FZ(28);
-            letter-spacing: 0.04em;
-            line-height: 1.6em;
-            @include sp {
-                font-size: FZ(20);
-            }
-        }
-        .wrapDetails {
-            font-size: inherit;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5em 0;
-            span {
-                font-size: FZ(19);
-                letter-spacing: 0.04em;
-            }
-        }
-    }
-}
-
-/* =================================
- * 教室について
- * ------------------------------ */
-.containerCourseInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3em 0;
-    padding: 5em 2em;
-    @include sp {
-        padding: 10vw 4vw 6vw;
-        gap: 6vw 0;
-    }
-    .itemImage {
-        max-width: 77rem;
-        img {
-            width: 100%;
-        }
-    }
-    article {
-        max-width: $articleMaxWidth;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0 8em;
-        dl {
-            font-size: inherit;
-            grid-column: span 2;
-            display: grid;
-            grid-template-columns: subgrid;
-            border-bottom: solid 1px rgb(0 0 0 / 20%);
-            padding-block: 1em;
-            @include sp {
-                display: flex;
-                flex-direction: column;
-                gap: 2vw 0;
-            }
-            dt {
-                font-size: FZ(16);
-                @include sp {
-                    font-size: FZ(18);
-                }
-            }
-            dd {
-                font-size: FZ(16);
-                letter-spacing: 0.04em;
-                p {
-                    font-size: inherit;
-                    margin-top: 0.5em;
-                }
-            }
-            &:first-of-type {
-                border-top: solid 1px rgb(0 0 0 / 20%);
-            }
+            gap: 4em 0;
         }
     }
 }

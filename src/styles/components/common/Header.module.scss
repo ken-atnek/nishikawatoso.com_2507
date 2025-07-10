@@ -1,7 +1,9 @@
 @use "variable" as *;
 @use "svg" as *;
 .containerHeader {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     padding-inline: 2em;
     justify-content: center;

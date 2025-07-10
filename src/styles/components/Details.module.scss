@@ -1,0 +1,336 @@
+/* =================================
+ * 	西川塗装 ディテール
+ * ------------------------------ */
+@use "variable" as *;
+@use "svg" as *;
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
+// このファイル全体のルールを無効にする
+
+.wrapDetails {
+    position: relative;
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    h3 {
+        position: relative;
+        background-color: #1a77be;
+        align-self: flex-start;
+        color: #fff;
+        text-align: center;
+        min-width: 10em;
+        font-size: FZ(24);
+        font-weight: 500;
+        padding: 1em 2em;
+        letter-spacing: 0.04em;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            translate: -50%;
+            bottom: -1px;
+            width: 1.2em;
+            aspect-ratio: 2;
+            background-color: #fff;
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+        }
+    }
+    .itemDetail {
+        background-color: #fff;
+        font-size: inherit;
+        padding: 4em;
+        display: flex;
+        flex-direction: column;
+        .itemLinkMore {
+            background-color: #434343;
+            color: #fff;
+            align-self: center;
+            font-size: inherit;
+            width: 80%;
+            max-width: 21em;
+            display: grid;
+            place-content: center;
+            padding-block: 1em;
+            padding-left: 1.8em;
+            transition: 0.3s ease-out;
+            span {
+                position: relative;
+                text-transform: uppercase;
+                font-size: FZ(24);
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    translate: 0 -50%;
+                    right: calc(100% + 0.3em);
+                    width: 1em;
+                    @include svg-arrow-blog2("ffffff");
+                }
+            }
+            @include hover {
+                background-color: rgba(#434343, 0.7);
+            }
+        }
+    }
+}
+
+/* =================================
+ * 	コンセプト
+ * ------------------------------ */
+.detailConcept {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0.5em 2em;
+    .itemImage {
+        position: relative;
+        max-width: 23rem;
+        aspect-ratio: 234/176;
+        grid-row: span 2;
+    }
+    h4 {
+        position: relative;
+        font-weight: 500;
+        font-size: FZ(20);
+        padding-left: 0.8em;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 6px;
+            height: 100%;
+            background-color: #1a77be;
+        }
+    }
+    p {
+        font-size: FZ(14);
+        letter-spacing: 0.08em;
+        line-height: 1.8em;
+        text-align: justify;
+    }
+}
+/* =================================
+ * 	 サービス
+ * ------------------------------ */
+.detailService {
+    gap: 3em 0;
+    ul {
+        display: grid;
+        grid-template-columns: clamp(10rem, 30%, 18rem) 1fr;
+        gap: 4em 1em;
+        font-size: inherit;
+        li {
+            display: grid;
+            position: relative;
+            font-size: inherit;
+            grid-template-rows: auto 1fr;
+            grid-template-columns: subgrid;
+            grid-column: span 2;
+            gap: 1em 2em;
+            .itemImage {
+                position: relative;
+                max-width: 18rem;
+                aspect-ratio: 1;
+                grid-row: span 2;
+            }
+            h4 {
+                font-size: FZ(24);
+                font-weight: 700;
+                border-bottom: 2px solid $base-blue;
+                padding-bottom: 0.2em;
+                &::before {
+                    content: "●";
+                    margin-right: 0.2em;
+                }
+            }
+            p {
+                font-size: FZ(14);
+                text-align: justify;
+                line-height: 1.6em;
+            }
+        }
+    }
+    .notice {
+        align-self: center;
+        font-size: FZ(16);
+    }
+}
+/* =================================
+ * 	 施工内容
+ * ------------------------------ */
+.detailServiceDetails {
+    ul {
+        position: relative;
+        display: grid;
+        font-size: inherit;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3em 2em;
+        li {
+            position: relative;
+            font-size: inherit;
+
+            figure {
+                font-size: inherit;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.3em 0;
+                img {
+                    aspect-ratio: 1.5;
+                    object-fit: cover;
+                }
+                figcaption {
+                    font-size: FZ(16);
+                    letter-spacing: 0.04em;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+/* =================================
+ * 	 施工実績
+ * ------------------------------ */
+.detailWorks {
+    gap: 3em 0;
+    ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5em 1em;
+        font-size: inherit;
+        li {
+            display: grid;
+            position: relative;
+            font-size: inherit;
+            grid-template-columns: subgrid;
+            grid-column: span 2;
+            gap: 0.5em 2em;
+            h4 {
+                position: relative;
+                padding-left: 0.8em;
+                grid-column: span 2;
+                font-size: FZ(20);
+                font-weight: 500;
+                letter-spacing: 0.04em;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 6px;
+                    height: 100%;
+                    background-color: #1a77be;
+                }
+            }
+
+            .itemImage {
+                position: relative;
+            }
+        }
+    }
+}
+/* =================================
+ * 	 お仕事Q&A
+ * ------------------------------ */
+.wrapDetails {
+    .detailQuestions {
+        .listQuestions {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 1px 0;
+            li {
+                background-color: rgb(51 51 51 / 10%);
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                button {
+                    justify-content: flex-start;
+                    color: #fff;
+                    font-size: FZ(16);
+                    padding: 1.4em 1em;
+                    width: 100%;
+                    transition: 0.3s ease-out;
+                    text-align: left;
+                    line-height: 1.6em;
+                    @include sp {
+                        padding: 3vw 2vw;
+                        font-size: FZ(12);
+                    }
+                    &.open {
+                        background-color: $base-blue;
+                    }
+                    &.closed {
+                        background-color: $base-blue;
+                    }
+                    @include hover {
+                        background-color: $base-blue;
+                    }
+                }
+                .itemAnswer {
+                    overflow: hidden;
+                    transition:
+                        max-height 0.4s ease,
+                        opacity 0.4s ease;
+                    opacity: 0;
+                    max-height: 0;
+                    font-size: inherit;
+                    div {
+                        font-size: FZ(16);
+                        padding: 1.4em;
+                        letter-spacing: 0.08em;
+                        line-height: 1.6em;
+                        @include sp {
+                            padding: 4vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* =================================
+ * 	 会社概要
+ * ------------------------------ */
+.wrapDetails {
+    .detailCompany {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        dl {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: subgrid;
+            font-size: inherit;
+            gap: 0 8em;
+            padding: 1em;
+            border-bottom: 2px dotted #cccccc;
+            dt {
+                font-size: FZ(14);
+                font-weight: 500;
+            }
+            dd {
+                font-size: FZ(14);
+                display: flex;
+                flex-direction: column;
+                letter-spacing: 0.08em;
+                gap: 0.5em 0;
+                span,
+                a {
+                    font-size: inherit;
+                }
+                address {
+                    font-size: inherit;
+                    display: flex;
+                    align-items: center;
+                    gap: 0 1em;
+                }
+            }
+        }
+    }
+}

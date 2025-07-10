@@ -96,7 +96,7 @@ const Header = () => {
               <Link
                 key={index}
                 href={item.href}
-                className={`${styles.itemLink} ${index === 0 ? styles.linkTop : ''}`}
+                className={styles.itemLink}
                 ref={(el) => {
                   if (el) linkRefs.current[index] = el;
                 }}

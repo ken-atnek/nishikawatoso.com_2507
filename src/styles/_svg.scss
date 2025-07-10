@@ -33,6 +33,14 @@
     background-size: contain;
     background-position: center center;
 }
+// ブログ記事矢印
+@mixin svg-arrow-blog2($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23#{$color}"><path d="M50,100h0C22.39,100,0,77.61,0,50h0C0,22.39,22.39,0,50,0h0c27.61,0,50,22.39,50,50h0c0,27.61-22.39,50-50,50ZM88.63,50c0-21.3-17.33-38.63-38.63-38.63S11.37,28.7,11.37,50s17.33,38.63,38.63,38.63,38.63-17.33,38.63-38.63Z"/><polygon points="73.54 50 34.54 27.48 34.54 72.52 73.54 50"/></svg>');
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
 
 // ダウンロードアイコン
 @mixin svg-icon-download($color) {

@@ -1,50 +1,31 @@
 /* =======================================
- * ページHEAD
+ * 西川塗装 ページHEAD
  * URL: src/components/common/PageHead.tsx
  * Created: 2025-07-05
  * Last updated: 2025-07-05
  * ======================================= */
 import React from 'react';
 import styles from '@/styles/components/common/PageHead.module.scss';
-import Image from 'next/image';
 import type { StaticImageData } from 'next/image';
 
 type PageHeadProps = {
+  titleEn: string;
   title: string;
-  subTitle: string;
-  description: React.ReactNode;
-  image: StaticImageData | string;
+  backgroundImage?: StaticImageData;
 };
-const PageHead = ({ title, subTitle, description, image }: PageHeadProps) => {
+const PageHead = ({ title, titleEn, backgroundImage }: PageHeadProps) => {
   return (
-    <>
-      <section className={styles.containerPageHead}>
-        <h1>{title}</h1>
-        <article>
-          <div className={styles.itemImage}>
-            <Image src={image} alt={title} fill sizes="100vw" />
-          </div>
-          <div className={styles.subTitle}>
-            {subTitle.split('\n').map((line, index) => (
-              <React.Fragment key={index}>
-                {line}
-                <br />
-              </React.Fragment>
-            ))}
-          </div>
-          <p>
-            {typeof description === 'string'
-              ? description.split('\n').map((line, index) => (
-                  <React.Fragment key={index}>
-                    {line}
-                    <br />
-                  </React.Fragment>
-                ))
-              : description}
-          </p>
-        </article>
-      </section>
-    </>
+    <section
+      className={styles.containerPageHead}
+      style={{
+        backgroundImage: backgroundImage
+          ? `url(${backgroundImage.src})`
+          : undefined,
+      }}
+    >
+      <span className={styles.h2Sidebar}>{titleEn}</span>
+      <h2>{title}</h2>
+    </section>
   );
 };
 export default PageHead;
