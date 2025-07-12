@@ -7,7 +7,6 @@
 /* stylelint-disable keyframes-name-pattern */
 /* stylelint-disable custom-property-pattern */
 // このファイル全体のルールを無効にする
-
 .wrapDetails {
     position: relative;
     font-size: inherit;
@@ -25,6 +24,9 @@
         font-weight: 500;
         padding: 1em 2em;
         letter-spacing: 0.04em;
+        @include sp {
+            font-size: FZ(20);
+        }
         &::after {
             content: "";
             position: absolute;
@@ -43,10 +45,12 @@
         padding: 4em;
         display: flex;
         flex-direction: column;
+        @include sp {
+            padding: 6vw 4vw;
+        }
         .blockForm {
             position: relative;
             font-size: inherit;
-
             .box_btn {
                 color: $base-white;
                 font-size: inherit;
@@ -72,6 +76,11 @@
                 grid-template-columns: auto 1fr;
                 font-size: inherit;
                 gap: 2em 0;
+                @include sp {
+                    display: flex;
+                    flex-direction: column;
+                }
+
                 // inputタグ初期化
                 input {
                     margin: 0;
@@ -82,6 +91,7 @@
                     outline: none;
                     appearance: none;
                 }
+
                 // textareaタグ初期化
                 textarea {
                     outline: none;
@@ -127,6 +137,9 @@
                     display: grid;
                     grid-template-columns: subgrid;
                     grid-column: span 2;
+                    @include sp {
+                        gap: 2vw 0;
+                    }
                     dt {
                         font-size: FZ(12);
                         color: #555;
@@ -145,6 +158,9 @@
                         font-size: inherit;
                         position: relative;
                         margin-left: 3em;
+                        @include sp {
+                            margin-left: unset;
+                        }
                     }
                     &.formAddress {
                         dd {
@@ -173,6 +189,9 @@
                                     select,
                                     input {
                                         width: 14em;
+                                        @include sp {
+                                            width: 100%;
+                                        }
                                     }
                                 }
                             }
@@ -183,6 +202,9 @@
                     font-size: inherit;
                     grid-column-start: 2;
                     margin-left: 3em;
+                    @include sp {
+                        margin-left: unset;
+                    }
                     button {
                         display: grid;
                         width: 100%;
@@ -190,6 +212,7 @@
                     }
                 }
             }
+
             // 確認画面
             .statusConfirm {
                 width: 100%;

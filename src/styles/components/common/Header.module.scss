@@ -24,6 +24,10 @@
             @include dancing-script;
             color: $base-blue;
             font-size: FZ(25);
+            @include sp {
+                position: relative;
+                z-index: 201;
+            }
         }
         nav {
             position: relative;
@@ -32,10 +36,6 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: flex-end;
-            @include sp {
-                justify-content: flex-start;
-                flex-wrap: nowrap;
-            }
             .linkContainer {
                 position: relative;
                 display: flex;
@@ -43,9 +43,11 @@
                 padding-bottom: 4px;
                 font-size: inherit;
                 @include sp {
-                    width: max-content;
-                    justify-content: flex-start;
-                    padding-bottom: unset;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 6vw 0;
+                    justify-content: center;
                 }
                 .itemLink {
                     position: relative;
@@ -70,6 +72,26 @@
                     pointer-events: none;
                     z-index: 10;
                     opacity: 0;
+                }
+            }
+            @include sp {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                height: 100dvh;
+                flex-direction: column;
+                padding: 10vw 0;
+                background-color: #fff;
+                translate: 100vw;
+                transition: 0.3s ease-out;
+                opacity: 0;
+                gap: 6vw 0;
+                justify-content: center;
+                &.is-open {
+                    translate: 0;
+                    opacity: 1;
                 }
             }
         }
@@ -103,8 +125,8 @@
 }
 .hamburgerButton {
     position: fixed;
-    top: 4vw;
-    left: 0;
+    top: 2vw;
+    right: 4vw;
     width: 11vw;
     aspect-ratio: 1;
 
@@ -112,8 +134,8 @@
     z-index: 100;
     display: none;
     background-color: $base-white;
-    border-top-right-radius: 2vw;
-    border-bottom-right-radius: 2vw;
+    border-radius: 2vw;
+    border: 1px solid #000;
     @include sp {
         display: block;
     }

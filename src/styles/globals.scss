@@ -28,7 +28,7 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-image: url(../assets/images/main-bg.webp);
+    background-image: url("../assets/images/main-bg.webp");
     background-repeat: repeat;
 }
 section,
@@ -46,6 +46,9 @@ footer {
     font-size: inherit;
     width: 100%;
     padding-inline: 1em;
+    @include sp {
+        padding-inline: 0;
+    }
     a {
         background-color: $base-blue;
         color: #fff;
@@ -58,6 +61,11 @@ footer {
         transition: 0.3s ease-out;
         @include hover {
             background-color: rgba($base-blue, 0.8);
+        }
+        @include sp {
+            width: 80vw;
+            font-size: FZ(20);
+            margin-inline: auto;
         }
     }
 }

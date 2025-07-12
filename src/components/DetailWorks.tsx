@@ -59,7 +59,7 @@ const DetailWorks = () => {
           ))}
         </ul>
         {pathname === '/' && (
-          <Link href="/service/" className={styles.itemLinkMore}>
+          <Link href="/works/" className={styles.itemLinkMore}>
             <span>more</span>
           </Link>
         )}

@@ -19,7 +19,6 @@
         background-color: rgba(#000, 0.2);
         z-index: -1;
     }
-
     & > div {
         display: flex;
         font-size: inherit;
@@ -29,7 +28,9 @@
         padding: 3em 8em;
         margin-inline: auto;
         z-index: 201;
-
+        @include sp {
+            padding-inline: 6vw;
+        }
         p {
             font-size: FZ(18);
         }

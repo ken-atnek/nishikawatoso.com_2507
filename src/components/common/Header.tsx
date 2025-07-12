@@ -90,7 +90,11 @@ const Header = () => {
     <header className={styles.containerHeader}>
       <article>
         <div className={styles.titleEn}>Nishikawa Painting</div>
-        <nav>
+        <nav
+          className={`${isOpen ? styles['is-open'] : ''} ${
+            !isOpen ? styles.closing : ''
+          }`}
+        >
           <div className={styles.linkContainer} ref={containerRef}>
             {navMenu.map((item, index) => (
               <Link
@@ -100,6 +104,7 @@ const Header = () => {
                 ref={(el) => {
                   if (el) linkRefs.current[index] = el;
                 }}
+                onClick={closeMenu}
                 onMouseEnter={() => handleHover(index)}
                 onMouseLeave={handleLeave}
               >

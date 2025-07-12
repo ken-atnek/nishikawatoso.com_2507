@@ -79,7 +79,7 @@ const DetailForm = () => {
       if (result.success) {
         setStatus('');
         setIsModalOpen(true); // モーダルを開く
-        setTimeout(() => setIsModalOpen(false), 300000); // 3秒後に自動閉じる
+        setTimeout(() => setIsModalOpen(false), 3000); // 3秒後に自動閉じる
         setName('');
         setEmail('');
         setPhone('');
