@@ -47,15 +47,15 @@ export const metadata: Metadata = {
   robots: isRealProduction ? 'index, follow' : 'noindex, nofollow',
   icons: {
     icon: [
-      // { url: 'favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      // { url: 'favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: 'favicon/favicon.ico', type: 'image/x-icon' },
+      // { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      // { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon/favicon.ico', type: 'image/x-icon' },
     ],
-    // apple: [{ url: 'favicon/apple-touch-icon.png', sizes: '180x180' }],
+    // apple: [{ url: '/favicon/apple-touch-icon.png', sizes: '180x180' }],
     // other: [
     //   {
     //     rel: 'icon',
-    //     url: 'favicon/android-chrome-192x192.png',
+    //     url: '/favicon/android-chrome-192x192.png',
     //     sizes: '192x192',
     //     type: 'image/png',
     //   },
