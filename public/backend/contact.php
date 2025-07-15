@@ -4,7 +4,7 @@
 * URL:public/backend/contact.php
 * Referenced in: /page.tsx,
 * Created: 2025-06-09
-* Last updated: 2025-06-09
+* Last updated: 2025-07-15
 * ======================================= */
 
 
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$to_name = "西川塗装";
 	$send_date = date("Y/n/j-H:i", time());
 	$from_name = "西川塗装 お問い合わせ";
-	$from_email = "contact@demo-nishikawatoso.tuna-pic.co.jp";  //
+	$from_email = "contact@nishikawatoso.com";  //
 	// **エンコーディング設定**
 	$orgEncoding = mb_internal_encoding();
 	mb_language("uni");

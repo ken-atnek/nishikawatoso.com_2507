@@ -66,7 +66,7 @@ const DetailForm = () => {
 
     try {
       const response = await fetch(
-        'http://demo-nishikawatoso.tuna-pic.co.jp/backend/contact.php',
+        'https://nishikawatoso.com/backend/contact.php',
         {
           method: 'POST',
           body: formData,

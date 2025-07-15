@@ -7,14 +7,14 @@
 
 import type { Metadata } from 'next';
 import '@/styles/globals.scss';
-import { M_PLUS_1p } from 'next/font/google';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
-const mPlus1p = M_PLUS_1p({
-  weight: ['100', '300', '400', '500', '700'], 
-  subsets: ['latin'],
-  display: 'swap',
-});
+// import { M_PLUS_1p } from 'next/font/google';
+// const mPlus1p = M_PLUS_1p({
+//   weight: ['100', '300', '400', '500', '700'],
+//   subsets: ['latin'],
+//   display: 'swap',
+// });
 
 // 実際の本番環境かどうかを判定
 const isRealProduction = process.env.NEXT_PUBLIC_IS_REAL_PROD === 'true';
@@ -69,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${mPlus1p.className}`}>
+    <html lang="ja">
       <head>
         <meta
           name="robots"
