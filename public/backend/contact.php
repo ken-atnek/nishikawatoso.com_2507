@@ -28,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 
 	// 📩 **メールの設定**
-	$to = "ken.atnek@gmail.com";
-	// $to = "spa85cx9@watch.ocn.ne.jp";
+	// $to = "ken.atnek@gmail.com";
+	$to = "spa85cx9@watch.ocn.ne.jp";
 	$to_name = "西川塗装";
 	$send_date = date("Y/n/j-H:i", time());
 	$from_name = "西川塗装 お問い合わせ";
